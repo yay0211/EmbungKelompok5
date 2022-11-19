@@ -24,14 +24,14 @@ df_outflow = pd.read_csv(url_outflow)
 
 
 #membangun komponen
-header = html.Div([html.H1("Aplikasi Simulasi Kapasitas Embung"), html.H3("Kelompok 7")],style={
+header = html.Div([html.H1("Aplikasi Simulasi Kapasitas Embung"), html.H3("Kelompok 5")],style={
     "textAlign" : "center",
     "top": 0,
     "left": 0,
     "right": 0,
     "height": "6 rem",
     "padding": "2rem 1rem",
-    "background-color": "red",
+    "background-color": "blue",
 })
 subtitle = html.H2("MK Kapita Selekta Matematika Komputasi (MA4103)", style={'textAlign': 'center'})
 inflow_fig = go.FigureWidget()
