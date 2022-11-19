@@ -26,7 +26,7 @@ df_outflow = pd.read_csv(url_outflow)
 #membangun komponen
 header = html.H1("Aplikasi Simulasi Kapasitas Embung D", style={'textAlign': 'center'})
 subtitle = html.H2("Mini Project Kapita Selekta Komputasi Kelompok 5", style={'textAlign': 'center'})
-gambar = html.H3(src = "img/EMBUNG D.jpg")
+gambar = html.H3(src = "EMBUNG D.jpg")
 inflow_fig = go.FigureWidget()
 inflow_fig.add_scatter(name='Inflow', x=df_inflow['Bulan'], y=df_inflow['Data'])
 inflow_fig.layout.title = 'Inflow'
