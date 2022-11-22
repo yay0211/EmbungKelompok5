@@ -7,7 +7,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-
+# from main import *
 
 #inisiasi aplikasi
 server = Flask(__name__)
@@ -17,25 +17,17 @@ app = dash.Dash(__name__, server=server, external_stylesheets=[dbc.themes.BOOTST
 #membaca file
 sheet_inflow = "inflow"
 sheet_outflow = "outflow"
-url_inflow = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQlkwInbZ751STr1BkqfcVaL5-Z4WISdwllRNdmq8eZ_IGndyaRzadYie21AsLdlNR3nMHp4x2egBiz/pub?gid=0&single=true&output=csv"
-url_outflow = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNbasikjHPoNoNK9d5mHCb1-jN-ugMwVxncvVlAQ8XJV0Gn5b2ynBGmYdgTvBLvR0J3va9ucvBe-lz/pub?gid=0&single=true&output=csv"
+url_inflow = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTzEHx9j46kH6GAYlbyKRCz5-Cbic2OaX2TMjFY1XI8uWLifG37k-CR80YReu8KsCntEjdvMOMmlkpy/pub?output=csv&sheet={sheet_inflow}"
+url_outflow = url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTzEHx9j46kH6GAYlbyKRCz5-Cbic2OaX2TMjFY1XI8uWLifG37k-CR80YReu8KsCntEjdvMOMmlkpy/pub?output=csv&sheet={sheet_outflow}"
 df_inflow = pd.read_csv(url_inflow)
 df_outflow = pd.read_csv(url_outflow)
 
 
 #membangun komponen
-header = html.Div([html.H1("Aplikasi Simulasi Kapasitas Embung"), html.H3("Kelompok 7")],style={
-    "textAlign" : "center",
-    "top": 0,
-    "left": 0,
-    "right": 0,
-    "height": "6 rem",
-    "padding": "2rem 1rem",
-    "background-color": "red",
-})
+header = html.H1("Aplikasi Simulasi Kapasitas Embung", style={'textAlign': 'center'})
 subtitle = html.H2("MK Kapita Selekta Matematika Komputasi (MA4103)", style={'textAlign': 'center'})
 inflow_fig = go.FigureWidget()
-inflow_fig.add_bar(name='Inflow', x=df_inflow['Bulan'], y=df_inflow['Data'])
+inflow_fig.add_scatter(name='Inflow', x=df_inflow['Bulan'], y=df_inflow['Data'])
 inflow_fig.layout.title = 'Inflow'
 
 outflow_fig = go.FigureWidget()
@@ -43,9 +35,6 @@ outflow_fig.add_scatter(name='Outflow', x=df_outflow['Bulan'], y=df_outflow['Dat
 outflow_fig.layout.title = 'Outflow'
 
 simulation_fig = go.FigureWidget()
-
-
-
 # simulation_fig.add_scatter(name='Outflow', x=df_outflow['Bulan'], y=df_outflow['Data'])
 simulation_fig.layout.title = 'Simulation'
 
@@ -60,8 +49,6 @@ app.layout = html.Div(
                 dbc.Col([dcc.Graph(figure=outflow_fig)])
             ]
             ),
-         
-        
         html.Div(
             [
                 html.Button('Run', id='run-button', n_clicks=0)
@@ -92,8 +79,8 @@ def graph_update(n_clicks):
         inout = df_inflow["Data"].values - df_outflow["Data"].values
         N = len(inout)
         u = np.zeros(N)
-       # u0 = 100
-        u[0] = 2000
+        u0 = 4000
+        u[0] = u0
         dt = 1
 
         #metode Euler
@@ -118,4 +105,5 @@ def graph_update(n_clicks):
 
 
 #jalankan aplikasi
-app.run_server(debug=True)
+if __name__ == '__main__':
+    app.run_server()
