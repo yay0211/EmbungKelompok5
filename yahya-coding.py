@@ -17,8 +17,8 @@ app = dash.Dash(__name__, server=server, external_stylesheets=[dbc.themes.BOOTST
 #membaca file
 sheet_inflow = "inflow"
 sheet_outflow = "outflow"
-url_inflow = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQlkwInbZ751STr1BkqfcVaL5-Z4WISdwllRNdmq8eZ_IGndyaRzadYie21AsLdlNR3nMHp4x2egBiz/pub?output=csv&sheet={sheet_inflow}"
-url_outflow = url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNbasikjHPoNoNK9d5mHCb1-jN-ugMwVxncvVlAQ8XJV0Gn5b2ynBGmYdgTvBLvR0J3va9ucvBe-lz/pub?output=csv"
+url_inflow = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQlkwInbZ751STr1BkqfcVaL5-Z4WISdwllRNdmq8eZ_IGndyaRzadYie21AsLdlNR3nMHp4x2egBiz/pub?output=csv"
+url_outflow = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNbasikjHPoNoNK9d5mHCb1-jN-ugMwVxncvVlAQ8XJV0Gn5b2ynBGmYdgTvBLvR0J3va9ucvBe-lz/pub?output=csv"
 df_inflow = pd.read_csv(url_inflow)
 df_outflow = pd.read_csv(url_outflow)
 
