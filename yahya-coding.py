@@ -36,7 +36,7 @@ header = html.Div([html.H1("Mini Project Embung E Simulation"), html.H3("Group 5
     "padding": "2rem 1rem",
     "background-color": "lightgreen",
 })
-subHeader = html.Div([html.H1("Anggota Kelompok"), html.P("Ketua Kelompok : Yahya Agung Nadabunda"),html.P("Anggota Kelompok : Rita, Wigrace, Kiagus, Retno, Shinta,  Cut "),html.P('Berikut pertanggungjawaban keaktifan kelompok kami bisa dilihat di "Bukti" berikut.'),dbc.Button("Bukti", color="info", href="https://drive.google.com/file/d/1WDgpBN6HGeOPRsEMa06AzFnnbX6DOoQM/view?usp=sharing")],style={
+subHeader = html.Div([html.H1("Anggota Kelompok"), html.P("Ketua Kelompok : Yahya Agung Nadabunda"),html.P("Anggota Kelompok : Rita, Wigrace, Kiagus, Retno, Shinta,  Cut ")],style={
     "textAlign" : "none",
     "top": 0,
     "left": 0,
