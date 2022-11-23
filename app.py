@@ -34,7 +34,7 @@ header = html.Div([html.H1("Mini Project Embung E Simulation"), html.H3("Group 5
     "textAlign" : "center",
     "height": "4 rem",
     "padding": "2rem 1rem",
-    "background-color": "lightgreen",
+    "background-color": "lightblue",
 })
 subHeader = html.Div([html.H1("Anggota Kelompok"), html.P("Ketua Kelompok : Yahya Agung Nadabunda"),html.P("Anggota Kelompok : Rita, Wigrace, Kiagus, Retno, Shinta,  Cut ")],style={
     "textAlign" : "none",
@@ -43,7 +43,7 @@ subHeader = html.Div([html.H1("Anggota Kelompok"), html.P("Ketua Kelompok : Yahy
     "right": 0,
     "height": "2 rem",
     "padding": "1rem 1rem",
-    "background-color": "lightgray",
+    "background-color": "lightblue",
 })
 
 
