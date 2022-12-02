@@ -51,7 +51,7 @@ subHeader = html.Div([html.H1("Anggota Kelompok"), html.P("Ketua Kelompok : Yahy
 
 subtitle = html.P("Embung D merupakan salah satu embung yang terdapat di Institut Teknologi Sumatera(ITERA), embung ini memiliki volume sebesar 12750m^3 pada kesempatan kali ini, kami akan mensimulasikan program numerik menggunakan metode Euler",style={})
 datamasuk_gam = go.FigureWidget()
-datamasuk_gam.add_bar(name="Chart Air Masuk Pertama", x=df_in['Bulan'], y=df_in['Q inflow'])
+datamasuk_gam.add_scatter(name="Chart Air Masuk Pertama", x=df_in['Bulan'], y=df_in['Q inflow'])
 datamasuk_gam.layout.title = 'Chart Inflow Embung '
 
 datakeluar_gam = go.FigureWidget()
